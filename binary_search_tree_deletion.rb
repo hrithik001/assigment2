@@ -75,10 +75,10 @@ class Tree
         elsif key > current.value
             current.right = deleteNode(current.right,key)
         else
-            if !current.left.nil? && !current.right.nil? #node not having any child
+            if current.left.nil? && current.right.nil? #node not having any child
                 return nil
             end
-            if !current.left.nil? || !current.right.nil? #node having only one child (left or right)
+            if current.left.nil? || current.right.nil? #node having only one child (left or right)
                 return current.left.nil? ? current.right : current.left
             end
             # node with two child
